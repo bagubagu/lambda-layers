@@ -1,0 +1,30 @@
+{
+  "name": "@bagubagu/lambda-layer-nodejs",
+  "version": "0.1.0",
+  "description": "Layer that provides useful nodejs libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagubagu/lambda-layers.git"
+  },
+  "keywords": [
+    "lambda",
+    "layer",
+    "bagubagu",
+    "node",
+    "nodejs"
+  ],
+  "author": "Louis Larry <louis.larry@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bagubagu/lambda-layers/issues"
+  },
+  "homepage": "https://github.com/bagubagu/lambda-layers#readme",
+  "dependencies": {
+    "@bagubagu/utils": "^1.8.0",
+    "moment": "^2.24.0"
+  }
+}
