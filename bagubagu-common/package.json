@@ -25,6 +25,8 @@
   "homepage": "https://github.com/bagubagu/lambda-layers#readme",
   "dependencies": {
     "@bagubagu/utils": "^1.8.0",
+    "aws-amplify": "^1.1.22",
+    "aws-sdk": "^2.427.0",
     "moment": "^2.24.0"
   }
 }

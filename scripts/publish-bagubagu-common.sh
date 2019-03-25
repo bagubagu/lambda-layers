@@ -24,7 +24,7 @@ LASTVERSION=$(aws lambda list-layer-versions --profile bagubagu --layer-name bag
 aws lambda add-layer-version-permission --layer-name bagubagu-common \
     --principal '*' \
     --version-number $LASTVERSION \
-    --statement-id bbb \
+    --statement-id bbb$$ \
     --action lambda:GetLayerVersion \
     --profile bagubagu
 
