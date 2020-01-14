@@ -4,7 +4,7 @@ Lambda-layers for Bagubagu projects.
 
 ## Usage
 
-To use `bagubagu-common` nodejs lambda layer, add following to your `sam template`
+Latest version is 11. To use latest, add following to your `sam template`.
 
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
@@ -13,10 +13,13 @@ Resources:
   MyLambda:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: my-lambda
-      # ..
+      CodeUri: ./functions
+      Handler: index.handler
+      Runtime: nodejs12.x
+      Timeout: 30
+      MemorySize: 512
       Layers:
-        - "arn:aws:lambda:us-east-1:116952590464:layer:bagubagu-common"
+        - "arn:aws:lambda:us-east-1:116952590464:layer:bagubagu-common:11"
 ```
 
 To use a specific version
@@ -29,7 +32,11 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: my-lambda
-      # ..
+      CodeUri: ./functions
+      Handler: index.handler
+      Runtime: nodejs12.x
+      Timeout: 30
+      MemorySize: 512
       Layers:
         - !Sub arn:aws:lambda:us-east-1:116952590464:layer:bagubagu-common:${LayerVersion}
 ```
@@ -39,9 +46,9 @@ Resources:
 Add `useful-library` npm module to bagubagu-common lambda-layer, then publish.
 
 ```bash
-cd bagubagu-common
+cd bagubagu-common/nodejs
 yarn --production
 yarn add useful-library
-cd ..
+cd ../..
 ./scripts/publish-bagubagu-common.sh
 ```

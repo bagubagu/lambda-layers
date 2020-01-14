@@ -8,18 +8,18 @@ fi
 ROOTDIR="$(dirname $0)/.."
 TEMPFILE="/tmp/bagubagu-common-$$.zip"
 
-cd $ROOTDIR
+cd $ROOTDIR/bagubagu-common
 
-zip -r $TEMPFILE bagubagu-common
+zip -r $TEMPFILE nodejs
 
 aws lambda publish-layer-version --layer-name "bagubagu-common" \
     --description "Useful npm libraries for Bagubagu projects" \
     --license-info "MIT" \
-    --compatible-runtimes "nodejs8.10" \
+    --compatible-runtimes "nodejs12.x" \
     --zip-file "fileb:///$TEMPFILE" \
     --profile bagubagu
 
-LASTVERSION=$(aws lambda list-layer-versions --profile bagubagu --layer-name bagubagu-common |jq '.LayerVersions[-1].Version')
+LASTVERSION=$(aws lambda list-layer-versions --profile bagubagu --layer-name bagubagu-common |jq '.LayerVersions[0].Version')
 
 aws lambda add-layer-version-permission --layer-name bagubagu-common \
     --principal '*' \
@@ -28,4 +28,4 @@ aws lambda add-layer-version-permission --layer-name bagubagu-common \
     --action lambda:GetLayerVersion \
     --profile bagubagu
 
-rm $TEMPFILE
+# rm $TEMPFILE

@@ -1,6 +1,6 @@
 {
   "name": "@bagubagu/lambda-layer-nodejs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Layer that provides useful nodejs libraries",
   "main": "index.js",
   "scripts": {
@@ -17,16 +17,18 @@
     "node",
     "nodejs"
   ],
-  "author": "Louis Larry <louis.larry@gmail.com>",
+  "author": "PT Bagubagu Solusi Indonesia <tech@bagubagu.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bagubagu/lambda-layers/issues"
   },
   "homepage": "https://github.com/bagubagu/lambda-layers#readme",
   "dependencies": {
-    "@bagubagu/utils": "^1.8.0",
-    "aws-amplify": "^1.1.22",
-    "aws-sdk": "^2.427.0",
-    "moment": "^2.24.0"
+    "@bagubagu/utils": "^1.13.0",
+    "aws-amplify": "^2.2.2",
+    "aws-sdk": "^2.602.0",
+    "aws-xray-sdk": "^3.0.0-alpha.1",
+    "date-fns": "^2.9.0",
+    "middy": "^0.33.2"
   }
 }
